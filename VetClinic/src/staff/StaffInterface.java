@@ -4,14 +4,14 @@ public abstract class StaffInterface {
 
 	//	create attributes
 	protected NameGenerator name;
-	protected int staffNumber;
+	protected static int staffNumber = 1;
 	protected int salaryLevel;
 	
 	//	Constructor
 	public StaffInterface(String name, int staffNumber, int salaryLevel) {
 		super();
 		this.name = new NameGenerator();
-		this.staffNumber = staffNumber;
+		this.staffNumber = getStaffNumber();
 		this.salaryLevel = salaryLevel;
 	}
 	
@@ -24,11 +24,9 @@ public abstract class StaffInterface {
 		this.name = name;
 	}
 	public int getStaffNumber() {
-		return staffNumber;
+		return staffNumber ++;
 	}
-	public void setStaffNumber(int staffNumber) {
-		this.staffNumber = staffNumber;
-	}
+	
 	public int getSalaryLevel() {
 		return salaryLevel;
 	}
