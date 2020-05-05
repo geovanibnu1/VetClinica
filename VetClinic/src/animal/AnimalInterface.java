@@ -1,5 +1,6 @@
 package animal;
 
+
 public abstract class AnimalInterface {
 	
 	protected NameGenerator name;
@@ -10,7 +11,7 @@ public abstract class AnimalInterface {
 	public AnimalInterface(String string, int age, String medicalCondition) {
 		super();
 		this.name = new NameGenerator();
-		this.age = age;
+		this.age = age = (int) (Math.random() * Math.pow(20, 1));
 		this.medicalCondition = new MedicalConditionGenerator();
 	}
 	
