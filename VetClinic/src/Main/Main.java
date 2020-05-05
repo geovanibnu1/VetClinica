@@ -1,3 +1,4 @@
+package Main;
 import animal.Dog;
 import animal.Hamster;
 import staff.ITNerd;
