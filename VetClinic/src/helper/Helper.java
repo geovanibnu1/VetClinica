@@ -3,6 +3,7 @@ package helper;
 import java.util.LinkedList;
 import java.util.List;
 
+import CLI.ComandLineInterface;
 import animal.Cat;
 import animal.Chinchilla;
 import animal.Dog;
@@ -36,7 +37,7 @@ public class Helper {
 		generateAnimals();
 		generateAdminStaff();
 		generateMedicalStaff();
-		test();
+		new ComandLineInterface();
 	}
 	
 	public void test() {
@@ -47,26 +48,7 @@ public class Helper {
 			System.out.println(dog.getAge());
 			System.out.println(dog.getMedicalCondition().getRandomCondition());
 		}
-		for(Nurse nurses : nurses) {
-			System.out.println("---------------------------------------");
-			System.out.println(nurses.getName().getRandomName());
-			System.out.println(nurses.getStaffNumber());
-			System.out.println(nurses.getClass().getSimpleName());
-		}
 		
-		for(Veterinarian veterinarians : veterinarians) {
-			System.out.println("---------------------------------------");
-			System.out.println(veterinarians.getName().getRandomName());
-			System.out.println(veterinarians.getStaffNumber());
-			System.out.println(veterinarians.getClass().getSimpleName());
-		}
-		
-		for(TraineeVet traineesVet : traineesVet) {
-			System.out.println("---------------------------------------");
-			System.out.println(traineesVet.getName().getRandomName());
-			System.out.println(traineesVet.getStaffNumber());
-			System.out.println(traineesVet.getClass().getSimpleName());
-		}
 		
 	}
 
@@ -124,4 +106,28 @@ public class Helper {
 			}
 		}
 	}
+
+	public void listAllStaff() {
+		for(Nurse nurses : nurses) {
+			System.out.println("---------------------------------------");
+			System.out.println(nurses.getName().getRandomName());
+			System.out.println(nurses.getStaffNumber());
+			System.out.println(nurses.getClass().getSimpleName());
+		}
+		
+		for(Veterinarian veterinarians : veterinarians) {
+			System.out.println("---------------------------------------");
+			System.out.println(veterinarians.getName().getRandomName());
+			System.out.println(veterinarians.getStaffNumber());
+			System.out.println(veterinarians.getClass().getSimpleName());
+		}
+		
+		for(TraineeVet traineesVet : traineesVet) {
+			System.out.println("---------------------------------------");
+			System.out.println(traineesVet.getName().getRandomName());
+			System.out.println(traineesVet.getStaffNumber());
+			System.out.println(traineesVet.getClass().getSimpleName());
+		}
+	}
+	
 }
