@@ -5,11 +5,11 @@ import java.util.Random;
 public class NameGenerator {
 
 	
-	// trocar esses nomes
-	private String[] firstName = {"ken", "Tom", "Sally", "Pavel", "Priscilla", "Claudia"};
+	// Array for names
+	private String[] firstName = {"Katerina", "Atticus", "Menachem", "Brooklyn", "Haaris", "Brittney", "Tiah", "Anya", "Melina", "Huzaifa", "Mehreen", "Paloma", "Carole", "Rabia", "Trevor", "Anisa", "Yvette", "Heather", "Jacqueline", "Amaya", "Zoey", "Benjamin"};
 	
-	// trocar esses sobrenomes
-	private String[] surName = {"Murphy", "Silva", "Smith", "Jones", "Carvalho", "Ernst"};
+	// Array for surname
+	private String[] surName = {"Arellano", "Brewer", "Wallis", "Benton", "Cottrell", "Castro", "Spears", "Wolfe", "Mac", "Cole", "Drake", "Leonard", "Roth", "Mill", "Corbett", "Rooney", "Marriott", "Driscoll", "Hobbs", "Millar", "Jefferson", "O'Quinn"};
 	
 	public NameGenerator() {
 		// TODO Auto-generated constructor stub

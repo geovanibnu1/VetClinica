@@ -2,7 +2,7 @@ package staff;
 
 public abstract class StaffInterface {
 
-	//	Attributes
+	//	create attributes
 	protected NameGenerator name;
 	protected int staffNumber;
 	protected int salaryLevel;
