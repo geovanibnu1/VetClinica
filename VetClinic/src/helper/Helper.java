@@ -9,7 +9,10 @@ import animal.Dog;
 import animal.Hamster;
 import animal.Parrot;
 import staff.ITNerd;
+import staff.Nurse;
 import staff.Receptionist;
+import staff.TraineeVet;
+import staff.Veterinarian;
 
 public class Helper {
 	
@@ -23,13 +26,16 @@ public class Helper {
 	//	List off staffs
 	List<ITNerd> itnerds = new LinkedList<ITNerd>();
 	List<Receptionist> receptionists = new LinkedList<Receptionist>();
-	
+	List<Nurse> nurses = new LinkedList<Nurse>();
+	List<Veterinarian> veterinarians = new LinkedList<Veterinarian>();
+	List<TraineeVet> traineesVet = new LinkedList<TraineeVet>();
 	
 	
 	
 	public Helper() {
 		generateAnimals();
 		generateAdminStaff();
+		generateMedicalStaff();
 		test();
 	}
 	
@@ -41,17 +47,25 @@ public class Helper {
 			System.out.println(dog.getAge());
 			System.out.println(dog.getMedicalCondition().getRandomCondition());
 		}
-		
-		for(ITNerd nerds : itnerds) {
+		for(Nurse nurses : nurses) {
 			System.out.println("---------------------------------------");
-			System.out.println(nerds.getName().getRandomName());
-			System.out.println(nerds.getStaffNumber());
+			System.out.println(nurses.getName().getRandomName());
+			System.out.println(nurses.getStaffNumber());
+			System.out.println(nurses.getClass().getSimpleName());
 		}
 		
-		for(Receptionist recep : receptionists) {
+		for(Veterinarian veterinarians : veterinarians) {
 			System.out.println("---------------------------------------");
-			System.out.println(recep.getName().getRandomName());
-			System.out.println(recep.getStaffNumber());
+			System.out.println(veterinarians.getName().getRandomName());
+			System.out.println(veterinarians.getStaffNumber());
+			System.out.println(veterinarians.getClass().getSimpleName());
+		}
+		
+		for(TraineeVet traineesVet : traineesVet) {
+			System.out.println("---------------------------------------");
+			System.out.println(traineesVet.getName().getRandomName());
+			System.out.println(traineesVet.getStaffNumber());
+			System.out.println(traineesVet.getClass().getSimpleName());
 		}
 		
 	}
@@ -99,4 +113,15 @@ public class Helper {
 		}
 	}
 
+	public void generateMedicalStaff() {
+		for(int i = 0; i < 30; i++) {
+			if(i < 10) {
+				nurses.add(new Nurse(null, 0, 1));
+			}else if(i >= 10 && i < 20) {
+				veterinarians.add(new Veterinarian(null, 0, 2));
+			}else if(i >= 20 && i < 30) {
+				traineesVet.add(new TraineeVet(null, 0, 2));
+			}
+		}
+	}
 }
