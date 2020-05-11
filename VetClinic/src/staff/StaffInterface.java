@@ -34,5 +34,9 @@ public abstract class StaffInterface {
 		this.salaryLevel = salaryLevel;
 	}
 	
-	
+	@Override
+	public String toString() {
+		System.out.println(this.name);
+		return super.toString();
+	}
 }

@@ -8,15 +8,14 @@ public abstract class AnimalInterface {
 	protected MedicalConditionGenerator medicalCondition;
 	
 	
-	public AnimalInterface(String string, int age, String medicalCondition) {
+	public AnimalInterface(String name, int age, String medicalCondition) {
 		super();
-		this.name = new NameGenerator();
 		this.age = age = (int) (Math.random() * Math.pow(20, 1));
 		this.medicalCondition = new MedicalConditionGenerator();
 	}
 	
 	public NameGenerator getName() {
-		return name;
+		return new NameGenerator();
 	}
 	public void setName(NameGenerator name) {
 		this.name = name;

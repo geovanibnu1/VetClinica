@@ -1,7 +1,12 @@
 package helper;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 import CLI.ComandLineInterface;
 import animal.Cat;
@@ -17,6 +22,9 @@ import staff.Veterinarian;
 
 public class Helper {
 
+	Scanner scan = new Scanner(System.in);
+	BufferedReader input =  new BufferedReader(new InputStreamReader(System.in));
+	
 	// List of animals
 	List<Dog> dogs = new LinkedList<Dog>();
 	List<Cat> cats = new LinkedList<Cat>();
@@ -289,6 +297,58 @@ public class Helper {
 			System.out.println("Animal Kind:" + parrot.getClass().getSimpleName());
 			System.out.println("Medical Condition: " + parrot.getMedicalCondition().getRandomCondition());
 		}
+		
+	}
+
+	public void selectStaffByName() {
+		
+		int opt;
+		int positionNumber = 1;
+		ArrayList<String> staffs = new ArrayList<>();
+		
+//		for(Nurse nurseName : nurses) {
+//			staffs.add(nurseName.getName().getRandomName());
+//		}
+		
+		for(ITNerd itnerdName : itnerds) {
+			staffs.add(itnerdName.getName().getRandomName());
+		}
+		
+//		for(Receptionist receptionistName : receptionists) {
+//			staffs.add(receptionistName.getName().getRandomName());
+//		}
+//		
+//		for(TraineeVet traineeVetName : traineesVet) {
+//			staffs.add(traineeVetName.getName().getRandomName());
+//		}
+//		
+//		for(Veterinarian veterinarianName : veterinarians) {
+//			staffs.add(veterinarianName.getName().getRandomName());
+//		}
+		
+		for(int i = 0; i < staffs.size(); i++) {
+			System.out.println("\n" + positionNumber + "-" + staffs.get(i));
+			positionNumber++;
+		}
+		
+		System.out.println("Enter the Staff Name: ");
+		try {
+			String inputedName = input.readLine();
+			
+			for(ITNerd itnerd : itnerds) {
+				if(inputedName.equals(itnerd.toString())) {
+					System.out.println("---------------------------------------");
+					System.out.println(itnerd.getStaffNumber());
+					System.out.println(itnerd.getClass().getSimpleName());
+				}
+			}
+		} catch (IOException e) {
+			System.out.println("Enter the name properly!");
+			selectStaffByName();
+			e.printStackTrace();
+		}
+		
+		
 		
 	}
 
