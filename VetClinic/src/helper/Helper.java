@@ -37,7 +37,7 @@ public class Helper {
 		generateAnimals();
 		generateAdminStaff();
 		generateMedicalStaff();
-		new ComandLineInterface();
+		new ComandLineInterface(this);
 	}
 	
 	public void test() {
@@ -128,6 +128,70 @@ public class Helper {
 			System.out.println(traineesVet.getStaffNumber());
 			System.out.println(traineesVet.getClass().getSimpleName());
 		}
+		
+		for(ITNerd itnerds : itnerds) {
+			System.out.println("---------------------------------------");
+			System.out.println(itnerds.getName().getRandomName());
+			System.out.println(itnerds.getStaffNumber());
+			System.out.println(itnerds.getClass().getSimpleName());
+		}
+		
+		for(Receptionist receptionist : receptionists) {
+			System.out.println("---------------------------------------");
+			System.out.println(receptionist.getName().getRandomName());
+			System.out.println(receptionist.getStaffNumber());
+			System.out.println(receptionist.getClass().getSimpleName());
+		}
+	}
+
+	public void listVeterinariam() {
+		for(Veterinarian veterinarians : veterinarians) {
+			System.out.println("---------------------------------------");
+			System.out.println(veterinarians.getName().getRandomName());
+			System.out.println(veterinarians.getStaffNumber());
+			System.out.println(veterinarians.getClass().getSimpleName());
+		}
+		
+	}
+
+	public void listNurse() {
+		for(Nurse nurses : nurses) {
+			System.out.println("---------------------------------------");
+			System.out.println(nurses.getName().getRandomName());
+			System.out.println(nurses.getStaffNumber());
+			System.out.println(nurses.getClass().getSimpleName());
+		}
+		
+	}
+
+	public void listTraineeVet() {
+		for(TraineeVet traineesVet : traineesVet) {
+			System.out.println("---------------------------------------");
+			System.out.println(traineesVet.getName().getRandomName());
+			System.out.println(traineesVet.getStaffNumber());
+			System.out.println(traineesVet.getClass().getSimpleName());
+		}
+		
+	}
+
+	public void listItNerd() {
+		for(ITNerd itnerds : itnerds) {
+			System.out.println("---------------------------------------");
+			System.out.println(itnerds.getName().getRandomName());
+			System.out.println(itnerds.getStaffNumber());
+			System.out.println(itnerds.getClass().getSimpleName());
+		}
+		
+	}
+
+	public void listReceptionist() {
+		for(Receptionist receptionist : receptionists) {
+			System.out.println("---------------------------------------");
+			System.out.println(receptionist.getName().getRandomName());
+			System.out.println(receptionist.getStaffNumber());
+			System.out.println(receptionist.getClass().getSimpleName());
+		}
+		
 	}
 	
 }
