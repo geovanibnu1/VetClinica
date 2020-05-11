@@ -16,40 +16,38 @@ import staff.TraineeVet;
 import staff.Veterinarian;
 
 public class Helper {
-	
+
 	// List of animals
 	List<Dog> dogs = new LinkedList<Dog>();
 	List<Cat> cats = new LinkedList<Cat>();
 	List<Chinchilla> chinchillas = new LinkedList<Chinchilla>();
 	List<Hamster> hamsters = new LinkedList<Hamster>();
 	List<Parrot> parrots = new LinkedList<Parrot>();
-	
-	//	List off staffs
+
+	// List off staffs
 	List<ITNerd> itnerds = new LinkedList<ITNerd>();
 	List<Receptionist> receptionists = new LinkedList<Receptionist>();
 	List<Nurse> nurses = new LinkedList<Nurse>();
 	List<Veterinarian> veterinarians = new LinkedList<Veterinarian>();
 	List<TraineeVet> traineesVet = new LinkedList<TraineeVet>();
-	
-	
-	
+
 	public Helper() {
 		generateAnimals();
 		generateAdminStaff();
 		generateMedicalStaff();
 		new ComandLineInterface(this);
 	}
-	
+
+	// just for test
 	public void test() {
-		for(Dog dog : dogs) {
+		for (Dog dog : dogs) {
 			System.out.println("---------------------------------------");
 			System.out.println(dog.getAnimalKind());
 			System.out.println(dog.getName().getRandomName());
 			System.out.println(dog.getAge());
 			System.out.println(dog.getMedicalCondition().getRandomCondition());
 		}
-		
-		
+
 	}
 
 	public void generateAnimals() {
@@ -58,85 +56,85 @@ public class Helper {
 		int ch = 0;
 		int h = 0;
 		int p = 0;
-		
-		while(d < 200 ) {
+
+		while (d < 200) {
 			dogs.add(new Dog(null, 0, null));
 			d++;
 		}
-		
-		while(c < 200 ) {
+
+		while (c < 200) {
 			cats.add(new Cat(null, 0, null));
 			c++;
 		}
-		
-		while(ch < 200 ) {
+
+		while (ch < 200) {
 			chinchillas.add(new Chinchilla(null, 0, null));
 			ch++;
 		}
-		
-		while(h < 200 ) {
+
+		while (h < 200) {
 			hamsters.add(new Hamster(null, 0, null));
 			h++;
 		}
-		
-		while(p < 200 ) {
+
+		while (p < 200) {
 			parrots.add(new Parrot(null, 0, null));
 			p++;
 		}
 	}
-	
+
 	public void generateAdminStaff() {
-		for(int i = 0; i < 10; i++) {
-			if(i < 5) {
+		for (int i = 0; i < 10; i++) {
+			if (i < 5) {
 				itnerds.add(new ITNerd(null, 0, 1));
-			}else if(i >= 5 && i < 10) {
+			} else if (i >= 5 && i < 10) {
 				receptionists.add(new Receptionist(null, 0, 2));
 			}
 		}
 	}
 
 	public void generateMedicalStaff() {
-		for(int i = 0; i < 30; i++) {
-			if(i < 10) {
+		for (int i = 0; i < 30; i++) {
+			if (i < 10) {
 				nurses.add(new Nurse(null, 0, 1));
-			}else if(i >= 10 && i < 20) {
+			} else if (i >= 10 && i < 20) {
 				veterinarians.add(new Veterinarian(null, 0, 2));
-			}else if(i >= 20 && i < 30) {
+			} else if (i >= 20 && i < 30) {
 				traineesVet.add(new TraineeVet(null, 0, 2));
 			}
 		}
 	}
 
 	public void listAllStaff() {
-		for(Nurse nurses : nurses) {
+		for (Nurse nurses : nurses) {
 			System.out.println("---------------------------------------");
-			System.out.println(nurses.getName().getRandomName());
-			System.out.println(nurses.getStaffNumber());
-			System.out.println(nurses.getClass().getSimpleName());
+			System.out.println("Name: " + nurses.getName().getRandomName());
+			System.out.println("Staff Number: " + nurses.getStaffNumber());
+			System.out.println("Job: " + nurses.getClass().getSimpleName());
 		}
-		
-		for(Veterinarian veterinarians : veterinarians) {
+
+		for (Veterinarian veterinarians : veterinarians) {
 			System.out.println("---------------------------------------");
 			System.out.println(veterinarians.getName().getRandomName());
 			System.out.println(veterinarians.getStaffNumber());
 			System.out.println(veterinarians.getClass().getSimpleName());
 		}
-		
-		for(TraineeVet traineesVet : traineesVet) {
+
+		for (TraineeVet traineesVet : traineesVet) {
 			System.out.println("---------------------------------------");
 			System.out.println(traineesVet.getName().getRandomName());
 			System.out.println(traineesVet.getStaffNumber());
 			System.out.println(traineesVet.getClass().getSimpleName());
 		}
-		
-		for(ITNerd itnerds : itnerds) {
+
+		for (ITNerd itnerds : itnerds) {
 			System.out.println("---------------------------------------");
 			System.out.println(itnerds.getName().getRandomName());
 			System.out.println(itnerds.getStaffNumber());
 			System.out.println(itnerds.getClass().getSimpleName());
 		}
-		
-		for(Receptionist receptionist : receptionists) {
+
+		for (Receptionist receptionist : receptionists) {
 			System.out.println("---------------------------------------");
 			System.out.println(receptionist.getName().getRandomName());
 			System.out.println(receptionist.getStaffNumber());
@@ -145,53 +143,153 @@ public class Helper {
 	}
 
 	public void listVeterinariam() {
-		for(Veterinarian veterinarians : veterinarians) {
+		for (Veterinarian veterinarians : veterinarians) {
 			System.out.println("---------------------------------------");
-			System.out.println(veterinarians.getName().getRandomName());
-			System.out.println(veterinarians.getStaffNumber());
-			System.out.println(veterinarians.getClass().getSimpleName());
+			System.out.println("Name: " + veterinarians.getName().getRandomName());
+			System.out.println("Staff Number: " + veterinarians.getStaffNumber());
+			System.out.println("Job: " + veterinarians.getClass().getSimpleName());
 		}
-		
+
 	}
 
 	public void listNurse() {
-		for(Nurse nurses : nurses) {
+		for (Nurse nurses : nurses) {
 			System.out.println("---------------------------------------");
 			System.out.println(nurses.getName().getRandomName());
 			System.out.println(nurses.getStaffNumber());
 			System.out.println(nurses.getClass().getSimpleName());
 		}
-		
+
 	}
 
 	public void listTraineeVet() {
-		for(TraineeVet traineesVet : traineesVet) {
+		for (TraineeVet traineesVet : traineesVet) {
 			System.out.println("---------------------------------------");
 			System.out.println(traineesVet.getName().getRandomName());
 			System.out.println(traineesVet.getStaffNumber());
 			System.out.println(traineesVet.getClass().getSimpleName());
 		}
-		
+
 	}
 
 	public void listItNerd() {
-		for(ITNerd itnerds : itnerds) {
+		for (ITNerd itnerds : itnerds) {
 			System.out.println("---------------------------------------");
 			System.out.println(itnerds.getName().getRandomName());
 			System.out.println(itnerds.getStaffNumber());
 			System.out.println(itnerds.getClass().getSimpleName());
 		}
-		
+
 	}
 
 	public void listReceptionist() {
-		for(Receptionist receptionist : receptionists) {
+		for (Receptionist receptionist : receptionists) {
 			System.out.println("---------------------------------------");
 			System.out.println(receptionist.getName().getRandomName());
 			System.out.println(receptionist.getStaffNumber());
 			System.out.println(receptionist.getClass().getSimpleName());
 		}
+
+	}
+
+	public void listAllAnimals() {
+		for (Dog dog : dogs) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + dog.getName().getRandomName());
+			System.out.println("Animal Age: " + dog.getAge());
+			System.out.println("Animal Kind:" + dog.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + dog.getMedicalCondition().getRandomCondition());
+		}
+		
+		for (Cat cat : cats) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + cat.getName().getRandomName());
+			System.out.println("Animal Age: " + cat.getAge());
+			System.out.println("Animal Kind:" + cat.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + cat.getMedicalCondition().getRandomCondition());
+		}
+		
+		for (Chinchilla chinchilla : chinchillas) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + chinchilla.getName().getRandomName());
+			System.out.println("Animal Age: " + chinchilla.getAge());
+			System.out.println("Animal Kind:" + chinchilla.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + chinchilla.getMedicalCondition().getRandomCondition());
+		}
+		
+		for (Hamster hamster : hamsters) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + hamster.getName().getRandomName());
+			System.out.println("Animal Age: " + hamster.getAge());
+			System.out.println("Animal Kind:" + hamster.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + hamster.getMedicalCondition().getRandomCondition());
+		}
+		
+		for (Parrot parrot : parrots) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + parrot.getName().getRandomName());
+			System.out.println("Animal Age: " + parrot.getAge());
+			System.out.println("Animal Kind:" + parrot.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + parrot.getMedicalCondition().getRandomCondition());
+		}
+
+	}
+
+
+	public void listDog() {
+		for (Dog dog : dogs) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + dog.getName().getRandomName());
+			System.out.println("Animal Age: " + dog.getAge());
+			System.out.println("Animal Kind:" + dog.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + dog.getMedicalCondition().getRandomCondition());
+		}
 		
 	}
-	
+
+	public void listCat() {
+		for (Cat cat : cats) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + cat.getName().getRandomName());
+			System.out.println("Animal Age: " + cat.getAge());
+			System.out.println("Animal Kind:" + cat.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + cat.getMedicalCondition().getRandomCondition());
+		}
+		
+	}
+
+
+	public void listChinchilla() {
+		for (Chinchilla chinchilla : chinchillas) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + chinchilla.getName().getRandomName());
+			System.out.println("Animal Age: " + chinchilla.getAge());
+			System.out.println("Animal Kind:" + chinchilla.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + chinchilla.getMedicalCondition().getRandomCondition());
+		}
+		
+	}
+
+	public void listHamster() {
+		for (Hamster hamster : hamsters) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + hamster.getName().getRandomName());
+			System.out.println("Animal Age: " + hamster.getAge());
+			System.out.println("Animal Kind:" + hamster.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + hamster.getMedicalCondition().getRandomCondition());
+		}
+		
+	}
+
+	public void listParrot() {
+		for (Parrot parrot : parrots) {
+			System.out.println("---------------------------------------");
+			System.out.println("PET Name: " + parrot.getName().getRandomName());
+			System.out.println("Animal Age: " + parrot.getAge());
+			System.out.println("Animal Kind:" + parrot.getClass().getSimpleName());
+			System.out.println("Medical Condition: " + parrot.getMedicalCondition().getRandomCondition());
+		}
+		
+	}
+
 }

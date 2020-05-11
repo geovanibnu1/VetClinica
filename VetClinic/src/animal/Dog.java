@@ -13,5 +13,5 @@ public class Dog extends AnimalInterface{
 		return animalKind;
 	}
 	
-
+	
 }

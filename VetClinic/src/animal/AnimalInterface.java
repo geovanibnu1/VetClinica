@@ -33,7 +33,8 @@ public abstract class AnimalInterface {
 	public void setMedicalCondition(MedicalConditionGenerator medicalCondition) {
 		this.medicalCondition = medicalCondition;
 	}
-	
+
+		
 	
 
 }
