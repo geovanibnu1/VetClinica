@@ -20,6 +20,7 @@ import staff.Nurse;
 import staff.Receptionist;
 import staff.TraineeVet;
 import staff.Veterinarian;
+import task.TaskInterface;
 
 public class Helper {
 
@@ -42,15 +43,41 @@ public class Helper {
 	List<Nurse> nurses = new LinkedList<Nurse>();
 	List<Veterinarian> veterinarians = new LinkedList<Veterinarian>();
 	List<TraineeVet> traineesVet = new LinkedList<TraineeVet>();
+	
+	// list of tasks
+	List<TaskInterface> arrayTask = new LinkedList<TaskInterface>();
 
 	//constructor generating the animals and the staff 
 	public Helper() {
 		generateAnimals();
 		generateAdminStaff();
 		generateMedicalStaff();
+		giveTasks();
 		
 		//calling the CLI passing this instance off the class
 		new ComandLineInterface(this);
+	}
+
+	// method to give tasks to admin staff
+	private void giveTasks() {
+		Random r = new Random();
+		
+		// simple tasks list can add more if desired
+		String[] taskList = {
+				"Make phone calls","Filing", "On Holidays",
+		};
+		
+		
+		// for loop to give tasks to itnerd
+		for(ITNerd itnerds : itnerds) {
+			String task = taskList[r.nextInt(taskList.length)];
+			arrayTask.add(new TaskInterface(itnerds, task));
+		}
+		// for loop to give tasks to receptionist
+		for(Receptionist rec : receptionists) {
+			String task = taskList[r.nextInt(taskList.length)];
+			arrayTask.add(new TaskInterface(rec, task));
+		}
 	}
 
 	// method to generate all the animals
@@ -476,6 +503,45 @@ public class Helper {
 				}
 			}
 			
+			
+		} catch (IOException e) {
+			System.out.println("Enter the name properly!");
+			selectStaffByName();
+			e.printStackTrace();
+		}
+		
+	}
+
+	
+	// list admin staff performing a certain task
+	public void selectTask() {
+		int opt;
+		int positionNumber = 1;
+		
+		// list of tasks
+		List<String> tasks = new LinkedList<>();
+		
+		for(TaskInterface tas : arrayTask) {
+			tasks.add(tas.getTask());
+		}
+		
+		
+		for(int i = 0; i < tasks.size(); i++) {
+			System.out.println("\n" + positionNumber + "-" + tasks.get(i));
+			positionNumber++;
+		}
+		
+		System.out.println("Enter the task Name: ");
+		try {
+			String inputedName = input.readLine();
+			
+			for(TaskInterface tas2 : arrayTask) {
+				if(inputedName.equals(tas2.getTask())) {
+					System.out.println("-------------------------------------------");
+					System.out.println("Task: " + tas2.getTask());
+					System.out.println("Staff Member: " + tas2.getStaff().getName());
+				}
+			}
 			
 		} catch (IOException e) {
 			System.out.println("Enter the name properly!");

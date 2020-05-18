@@ -48,7 +48,8 @@ public class ComandLineInterface {
 		System.out.println("Staff Members Menu, What would you like to do?:  ");
 		System.out.println("\n1 For show all staff members: "
 				+ "\n2 List staff by Category: "
-				+ "\n3 List Staff Member by Name: " +
+				+ "\n3 List Staff Member by Name: "
+				+ "\n4 List Staff by task: " +
 				"\n0 For exit: ");
 
 		opt = scan.nextInt();
@@ -87,6 +88,10 @@ public class ComandLineInterface {
 			}else if(opt == 3) {
 				System.out.println("Select Staff Member Name: ");
 				helper.selectStaffByName();
+				staffMenu(helper);
+			}else if(opt == 4){
+				System.out.println("Select task by Name: ");
+				helper.selectTask();
 				staffMenu(helper);
 			}else {
 				System.out.println("Invalid Option, please enter a valid number option!");
