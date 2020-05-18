@@ -23,7 +23,10 @@ import staff.Veterinarian;
 
 public class Helper {
 
+	//scanner to get user inputs
 	Scanner scan = new Scanner(System.in);
+	
+	//bufferreader to get user inputs
 	BufferedReader input =  new BufferedReader(new InputStreamReader(System.in));
 	
 	// List of animals
@@ -40,26 +43,17 @@ public class Helper {
 	List<Veterinarian> veterinarians = new LinkedList<Veterinarian>();
 	List<TraineeVet> traineesVet = new LinkedList<TraineeVet>();
 
+	//constructor generating the animals and the staff 
 	public Helper() {
 		generateAnimals();
 		generateAdminStaff();
 		generateMedicalStaff();
+		
+		//calling the CLI passing this instance off the class
 		new ComandLineInterface(this);
 	}
 
-	// just for test
-	public void test() {
-		for (Dog dog : dogs) {
-			System.out.println("---------------------------------------");
-			System.out.println(dog.getAnimalKind());
-			System.out.println(dog.getName());
-			System.out.println(dog.getAge());
-			System.out.println(dog.getMedicalCondition().getRandomCondition());
-		}
-
-	}
-	
-
+	// method to generate all the animals
 	public void generateAnimals() {
 		int d = 0;
 		int c = 0;
@@ -67,33 +61,36 @@ public class Helper {
 		int h = 0;
 		int p = 0;
 
+		// while loop to generate 200 dogs
 		while (d < 200) {
 			dogs.add(new Dog(null, 0, null));
 			d++;
 		}
-
+		// while loop to generate 200 cats
 		while (c < 200) {
 			cats.add(new Cat(null, 0, null));
 			c++;
 		}
-
+		// while loop to generate 200 chinchillas
 		while (ch < 200) {
 			chinchillas.add(new Chinchilla(null, 0, null));
 			ch++;
 		}
-
+		// while loop to generate 200 hamsters
 		while (h < 200) {
 			hamsters.add(new Hamster(null, 0, null));
 			h++;
 		}
-
+		// while loop to generate 200 parrots
 		while (p < 200) {
 			parrots.add(new Parrot(null, 0, null));
 			p++;
 		}
 	}
 
+	// method to generate admin staff
 	public void generateAdminStaff() {
+		//for loop to generate 5 itnerds and 5 receptionists
 		for (int i = 0; i < 10; i++) {
 			if (i < 5) {
 				itnerds.add(new ITNerd(null, 0, 1));
@@ -103,7 +100,9 @@ public class Helper {
 		}
 	}
 
+	//	method to generate medical staff
 	public void generateMedicalStaff() {
+		//for loop to generate all the medical staff 10 of each
 		for (int i = 0; i < 30; i++) {
 			if (i < 10) {
 				nurses.add(new Nurse(null, 0, 1));
@@ -115,6 +114,7 @@ public class Helper {
 		}
 	}
 
+	//method to list all the staff
 	public void listAllStaff() {
 		for (Nurse nurses : nurses) {
 			System.out.println("---------------------------------------");
@@ -152,6 +152,7 @@ public class Helper {
 		}
 	}
 
+	//method to list veterinarians
 	public void listVeterinariam() {
 		for (Veterinarian veterinarians : veterinarians) {
 			System.out.println("---------------------------------------");
@@ -161,7 +162,7 @@ public class Helper {
 		}
 
 	}
-
+	//method to list nurses
 	public void listNurse() {
 		for (Nurse nurses : nurses) {
 			System.out.println("---------------------------------------");
@@ -171,7 +172,7 @@ public class Helper {
 		}
 
 	}
-
+	//method to list traineevet
 	public void listTraineeVet() {
 		for (TraineeVet traineesVet : traineesVet) {
 			System.out.println("---------------------------------------");
@@ -181,7 +182,7 @@ public class Helper {
 		}
 
 	}
-
+	//method to list itnerds
 	public void listItNerd() {
 		for (ITNerd itnerds : itnerds) {
 			System.out.println("---------------------------------------");
@@ -191,7 +192,7 @@ public class Helper {
 		}
 
 	}
-
+	//method to list receptionists
 	public void listReceptionist() {
 		for (Receptionist receptionist : receptionists) {
 			System.out.println("---------------------------------------");
@@ -201,7 +202,7 @@ public class Helper {
 		}
 
 	}
-
+	//method to list all animals
 	public void listAllAnimals() {
 		for (Dog dog : dogs) {
 			System.out.println("---------------------------------------");
@@ -245,7 +246,7 @@ public class Helper {
 
 	}
 
-
+	//method to list dogs
 	public void listDog() {
 		for (Dog dog : dogs) {
 			System.out.println("---------------------------------------");
@@ -256,7 +257,7 @@ public class Helper {
 		}
 		
 	}
-
+	//method to list cats
 	public void listCat() {
 		for (Cat cat : cats) {
 			System.out.println("---------------------------------------");
@@ -268,7 +269,7 @@ public class Helper {
 		
 	}
 
-
+	//method to list chinchillas
 	public void listChinchilla() {
 		for (Chinchilla chinchilla : chinchillas) {
 			System.out.println("---------------------------------------");
@@ -279,7 +280,7 @@ public class Helper {
 		}
 		
 	}
-
+	//method to list hamsters
 	public void listHamster() {
 		for (Hamster hamster : hamsters) {
 			System.out.println("---------------------------------------");
@@ -290,7 +291,7 @@ public class Helper {
 		}
 		
 	}
-
+	//method to list parrots
 	public void listParrot() {
 		for (Parrot parrot : parrots) {
 			System.out.println("---------------------------------------");
@@ -302,12 +303,15 @@ public class Helper {
 		
 	}
 
+	//method to list staff by name
 	public void selectStaffByName() {
 		
 		int opt;
 		int positionNumber = 1;
+		// array list to keep just the staff names
 		List<String> staffs = new LinkedList<>();
 		
+		// fgor loops to get names from all staff members
 		for(Nurse nurseName : nurses) {
 			staffs.add(nurseName.getName());
 		}
@@ -394,6 +398,7 @@ public class Helper {
 		
 	}
 
+	//method to list animal by name
 	public void selectAnimalByName() {
 		int opt;
 		int positionNumber = 1;
