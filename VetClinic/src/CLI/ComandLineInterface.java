@@ -100,7 +100,8 @@ public class ComandLineInterface {
 
 		System.out.println("Animals Menu, What would you like to do?:  ");
 		System.out.println("\n1 For show all animals: "
-				+ "\n2 List animals by Category" +
+				+ "\n2 List animals by Category"
+				+ "\n3 List animal by name" +
 				"\n0 For exit: ");
 
 		opt = scan.nextInt();
@@ -136,6 +137,10 @@ public class ComandLineInterface {
 					helper.listParrot();
 					AnimalMenu(helper);
 				}
+			}else if(opt == 3){
+				System.out.println("Select animal by Name: ");
+				helper.selectAnimalByName();
+				AnimalMenu(helper);
 			}else {
 				System.out.println("Invalid Option, please enter a valid number option!");
 				AnimalMenu(helper);
