@@ -8,7 +8,9 @@ import helper.Helper;
 
 public class ComandLineInterface {
 
+	// buffer reader to get inputs from the user
 	BufferedReader input =  new BufferedReader(new InputStreamReader(System.in));
+	// scanner to get user inputs
 	Scanner scan = new Scanner(System.in);
 	
 	String option = null;
@@ -17,7 +19,7 @@ public class ComandLineInterface {
 	
 
 	public ComandLineInterface(Helper helper) {
-
+// menu of options for the user
 		System.out.println("Menu: ");
 		System.out.println("1 - For Staff Menu");
 		System.out.println("2 - For Animal Menu");
@@ -39,6 +41,7 @@ public class ComandLineInterface {
 
 	}
 
+	// staff menu 
 	public void staffMenu(Helper helper) {
 
 
@@ -95,6 +98,7 @@ public class ComandLineInterface {
 
 	}
 
+	// animal menu
 	public void AnimalMenu(Helper helper) {
 
 
